@@ -1,12 +1,16 @@
 import { useRouter } from "next/router";
+import CardUser from "../../components/CardUser/index";
 import Layout from "../../components/layout/index";
 
 export default function UserInfo(props) {
   const router = useRouter();
   const { jsonData } = props;
+
+  // just a friendly reminder
   // since we fetch data from API, which is it's time-consuming
   // don't forget to return null when the data is not ready yet
   // if not, it will give an error as we build our project later
+
   if (!jsonData) return null;
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -14,12 +18,13 @@ export default function UserInfo(props) {
   console.log(jsonData);
   return (
     <Layout>
-      <div>
-        <p>{jsonData.name}</p>
-        <p>{jsonData.email}</p>
-        <p>{jsonData.gender}</p>
-        <p>Hello</p>
-      </div>
+      <CardUser
+        userId={jsonData.id}
+        userName={jsonData.name}
+        userEmail={jsonData.email}
+        userGender={jsonData.gender}
+        userStatus={jsonData.status}
+      />
     </Layout>
   );
 }
@@ -41,6 +46,7 @@ export const getStaticPaths = async () => {
   };
 };
 
+// just a friendly reminder again for future me
 // should use params name it can't be done by another name
 export const getStaticProps = async (whatever) => {
   const { id } = whatever.params;

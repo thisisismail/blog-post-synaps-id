@@ -1,5 +1,5 @@
-import { Card, CardBody } from "@material-tailwind/react";
 import CardUser from "../../components/CardUser/index";
+import CardCreateUser from "../../components/CardCreateUser";
 import Layout from "../../components/layout/index";
 
 export default function AllUsers(props) {
@@ -7,24 +7,26 @@ export default function AllUsers(props) {
   console.log(jsonData);
   return (
     <Layout>
-      <div className="border-2 w-80">
-        <p className="mt-4">AllUsers</p>
-        {jsonData.map((data) => {
-          return (
-            <CardUser
-              key={data.id}
-              userId={data.id}
-              userName={data.name}
-              userEmail={data.email}
-              userGender={data.gender}
-              userStatus={data.status}
-            />
-          );
-        })}
+      <div
+        className="flex border-0 justify-center gap-3 mx-auto px-3 flex-col md:flex-row"
+        style={{ maxWidth: 1000 }}
+      >
+        <CardCreateUser />
+        <div className="border-0 w-full" style={{ minWidth: 300 }}>
+          {jsonData.map((data) => {
+            return (
+              <CardUser
+                key={data.id}
+                userId={data.id}
+                userName={data.name}
+                userEmail={data.email}
+                userGender={data.gender}
+                userStatus={data.status}
+              />
+            );
+          })}
+        </div>
       </div>
-      <Card style={{ width: 300 }}>
-        <CardBody>Crete User</CardBody>
-      </Card>
     </Layout>
   );
 }

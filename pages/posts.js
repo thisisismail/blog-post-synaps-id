@@ -59,6 +59,7 @@ export default function posts({ dataPosts, dataUsers, dataComments }) {
           postComments={comments}
           postUser={userInfo?.name}
           postEmail={userInfo?.email}
+          postUserId={userInfo?.id}
           postTitle={title}
           postBody={body}
           closeButton={

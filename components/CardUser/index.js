@@ -3,7 +3,7 @@ import { Card, CardBody } from "@material-tailwind/react";
 export default function CardUser(props) {
   const { userId, userEmail, userName, userGender, userStatus } = props;
   return (
-    <Card key={userId} className="mt-4">
+    <Card key={userId} className="mt-3">
       <CardBody className="flex justify-between">
         <div className="border-0 border-red-200 rounded-xl ">
           <h1 className="font-bold text-grey-700">{userName}</h1>

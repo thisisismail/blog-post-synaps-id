@@ -1,8 +1,10 @@
 import React from "react";
+import { useRouter } from "next/router";
 import { Card, CardBody, CardFooter } from "@material-tailwind/react";
 import { GoComment } from "react-icons/go";
 
 export default function PopUpPost(props) {
+  const router = useRouter();
   const {
     postTitle,
     postBody,
@@ -10,6 +12,7 @@ export default function PopUpPost(props) {
     postUser,
     postEmail,
     postComments,
+    postUserId,
   } = props;
   return (
     <div className="z-50 border-0 bg-grey-700 bg-opacity-80 backdrop-blur-sm h-full w-screen px-0 fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
@@ -19,10 +22,13 @@ export default function PopUpPost(props) {
       >
         <div className="border-b-2 border-grey-200 w-full rounded-t-xl px-6 py-4">
           {postUser && (
-            <>
+            <div
+              onClick={() => router.push(`/users/${postUserId}`)}
+              className="cursor-pointer hover:text-grey-800 hover:duration-500"
+            >
               <h1 className="border-0 font-bold text-sm">{postUser}</h1>
               <h1 className="border-0 line-clamp-1 text-xs">{postEmail}</h1>
-            </>
+            </div>
           )}
           {!postUser && (
             <>
