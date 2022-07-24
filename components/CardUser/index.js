@@ -19,6 +19,9 @@ export default function CardUser(props) {
           <h1 className="border-0 line-clamp-1 text-xs text-grey-700">
             {userGender}
           </h1>
+          <h1 className="border-0 line-clamp-1 text-xs text-grey-700">
+            ID: {userId}
+          </h1>
         </div>
         {userStatus === "active" ? (
           <h1 className="border-0 line-clamp-1 text-xs font-bold text-green-700 absolute right-5">
