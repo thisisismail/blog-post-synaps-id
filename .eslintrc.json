@@ -1,0 +1,43 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "next/core-web-vitals"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+      "react/jsx-filename-extension": [1,  { "extensions": [".js", ".jsx"] }],
+      "react/react-in-jsx-scope": "off",
+      "quotes": "off",
+      "react/jsx-one-expression-per-line": "off",
+      "linebreak-style": 0,
+      "no-console": "off",
+      "react/prop-types": "off",
+      "arrow-body-style": "off",
+      "jsx-a11y/no-static-element-interactions": "off",
+      "jsx-a11y/click-events-have-key-events": "off",
+      "react/jsx-props-no-spreading": "off",
+      "comma-dangle": "off",
+      "implicit-arrow-linebreak": "off",
+      "function-paren-newline": "off",
+      "object-curly-newline": "off",
+      "react-hooks/rules-of-hooks": "off",
+      "react/jsx-wrap-multilines": "off"
+
+
+    //   "react/prop-types": [<enabled>, { ignore: <ignore>, customValidators: <customValidator>, skipUndeclared: <skipUndeclared> }]
+    }
+}

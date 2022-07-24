@@ -1,0 +1,29 @@
+import { Card, CardBody } from "@material-tailwind/react";
+
+export default function CardUser(props) {
+  const { userId, userEmail, userName, userGender, userStatus } = props;
+  return (
+    <Card key={userId} className="mt-4">
+      <CardBody className="flex justify-between">
+        <div className="border-0 border-red-200 rounded-xl ">
+          <h1 className="font-bold text-grey-700">{userName}</h1>
+          <h1 className="border-0 line-clamp-1 text-xs text-grey-700">
+            {userEmail}
+          </h1>
+          <h1 className="border-0 line-clamp-1 text-xs text-grey-700">
+            {userGender}
+          </h1>
+        </div>
+        {userStatus === "active" ? (
+          <h1 className="border-0 line-clamp-1 text-xs font-bold text-green-700 absolute right-5">
+            {userStatus}
+          </h1>
+        ) : (
+          <h1 className="border-0 line-clamp-1 text-xs font-bold text-red-700 absolute right-5">
+            {userStatus}
+          </h1>
+        )}
+      </CardBody>
+    </Card>
+  );
+}
