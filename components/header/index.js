@@ -9,7 +9,10 @@ export default function HeaderSection() {
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/users">Users</Link>
+            <Link href="/users">Users CRUD</Link>
+          </li>
+          <li>
+            <Link href="/userSearcher">Search User</Link>
           </li>
           <li>
             <Link href="/posts">Posts</Link>

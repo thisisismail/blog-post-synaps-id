@@ -18,8 +18,11 @@ export default function UserInfo(props) {
   console.log(jsonData);
   return (
     <Layout>
-      <div style={{ maxWidth: 1400 }} className="mx-auto">
-        <h1 style={{ textSize: 24 }} className="text-bold text-2xl -mb-2 text-grey-600">
+      <div style={{ maxWidth: 1400 }} className="mx-auto px-3 ">
+        <h1
+          style={{ textSize: 24 }}
+          className="text-bold text-2xl -mb-2 text-grey-600"
+        >
           User detail
         </h1>
         <CardUser
