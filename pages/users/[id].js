@@ -18,13 +18,18 @@ export default function UserInfo(props) {
   console.log(jsonData);
   return (
     <Layout>
-      <CardUser
-        userId={jsonData.id}
-        userName={jsonData.name}
-        userEmail={jsonData.email}
-        userGender={jsonData.gender}
-        userStatus={jsonData.status}
-      />
+      <div style={{ maxWidth: 1400 }} className="mx-auto">
+        <h1 style={{ textSize: 24 }} className="text-bold text-2xl -mb-2 text-grey-600">
+          User detail
+        </h1>
+        <CardUser
+          userId={jsonData.id}
+          userName={jsonData.name}
+          userEmail={jsonData.email}
+          userGender={jsonData.gender}
+          userStatus={jsonData.status}
+        />
+      </div>
     </Layout>
   );
 }

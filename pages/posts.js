@@ -94,10 +94,9 @@ export default function posts({ dataPosts, dataUsers, dataComments }) {
 
   return (
     <Layout>
-      <div>Posts</div>
       {popUp}
       <div
-        className="border-0 gap-4 flex flex-wrap justify-center mx-auto px-4"
+        className="border-0 gap-4 flex flex-wrap justify-center mx-auto px-4 mt-3"
         style={{ maxWidth: 1400 }}
       >
         {postsList}

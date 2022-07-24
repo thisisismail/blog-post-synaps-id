@@ -1,9 +1,15 @@
 import { Card, CardBody } from "@material-tailwind/react";
+import { useRouter } from "next/router";
 
 export default function CardUser(props) {
   const { userId, userEmail, userName, userGender, userStatus } = props;
+  const router = useRouter();
   return (
-    <Card key={userId} className="mt-3">
+    <Card
+      key={userId}
+      onClick={() => router.push(`/users/${userId}`)}
+      className="cursor-pointer hover:bg-grey-200 hover:duration-500 mt-3"
+    >
       <CardBody className="flex justify-between">
         <div className="border-0 border-red-200 rounded-xl ">
           <h1 className="font-bold text-grey-700">{userName}</h1>
