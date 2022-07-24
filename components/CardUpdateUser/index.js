@@ -40,12 +40,12 @@ export default function CardUpdateUser() {
         return result;
       })
       .then((res) => {
-        if (res.code === (200)) {
-          setMessage("Succesfully create new user");
+        if (res.code === 200) {
+          setMessage("Succesfully update new user");
           setColor("green");
           router.push(`/users/`);
         } else {
-          setMessage("Error create new user");
+          setMessage("Error update new user");
           setColor("red");
         }
         setShow(true);
