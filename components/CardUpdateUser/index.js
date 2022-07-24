@@ -8,9 +8,9 @@ import {
   Button,
   Alert,
 } from "@material-tailwind/react";
-import { FetchCreateUser } from "../../pages/api/createuserAPI";
+import { FetchUpdateUser } from "../../pages/api/updateuserAPI";
 
-export default function CardCreateUser() {
+export default function CardUpdateUser() {
   const [user, setUser] = useState({
     email: "",
     name: "",
@@ -18,6 +18,8 @@ export default function CardCreateUser() {
     status: "",
     // button: false,
   });
+
+  const [id, setId] = useState("");
 
   const [show, setShow] = useState(false);
   const [message, setMessage] = useState("");
@@ -30,7 +32,7 @@ export default function CardCreateUser() {
   const router = useRouter();
 
   const btnCreateUser = () => {
-    FetchCreateUser(user)
+    FetchUpdateUser(user, id)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
@@ -38,7 +40,7 @@ export default function CardCreateUser() {
         return result;
       })
       .then((res) => {
-        if (res.code === (201 || 200)) {
+        if (res.code === (200)) {
           setMessage("Succesfully create new user");
           setColor("green");
           router.push(`/users/`);
@@ -60,6 +62,10 @@ export default function CardCreateUser() {
     setUser({ ...user, [name]: value });
   };
 
+  const inputHandlerID = (e) => {
+    setId(e.target.value);
+  };
+
   const genderOptions = [
     { value: "", text: "gender" },
     { value: "female", text: "female" },
@@ -76,7 +82,18 @@ export default function CardCreateUser() {
     <div>
       <Card style={{ minWidth: 300 }} className="border-0 h-min mt-3 -mb-3">
         <CardBody className="flex flex-col gap-2">
-          <h1 className="font-bold text-grey-700 mx-auto">Create User</h1>
+          <h1 className="font-bold text-grey-700 mx-auto">Update User</h1>
+          <Input
+            className="text-green-800 w-full outline outline-0 outline-green-200"
+            label="User's ID"
+            type="text"
+            // should be the same as input we want to assign
+            name="id"
+            onChange={inputHandlerID}
+            // it is a good practice to add double question mark to prevent the error
+            value={id ?? ""}
+            color="teal"
+          />
           <Input
             className="text-green-800 w-full outline outline-0 outline-green-200"
             label="name"
@@ -129,7 +146,7 @@ export default function CardCreateUser() {
         </CardBody>
         <CardFooter divider className="border-0 flex justify-center">
           <Button onClick={btnCreateUser} color="green" className="w-40">
-            Create user
+            Update user
           </Button>
         </CardFooter>
       </Card>

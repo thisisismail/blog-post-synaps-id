@@ -49,7 +49,7 @@ export default function CardDeleteUser() {
 
   return (
     <div>
-      <Card style={{ minWidth: 300 }} className="border-0 h-min -mb-3">
+      <Card style={{ minWidth: 300 }} className="border-0 h-min -mb-6">
         <CardBody className="flex flex-col gap-2">
           <h1 className="font-bold text-grey-700 mx-auto">Delete User</h1>
           <Input

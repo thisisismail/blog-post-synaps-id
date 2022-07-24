@@ -2,6 +2,7 @@ import { Card, CardBody } from "@material-tailwind/react";
 import CardUser from "../../components/CardUser/index";
 import CardCreateUser from "../../components/CardCreateUser";
 import CardDeleteUser from "../../components/CardDeleteUser";
+import CardUpdateUser from "../../components/CardUpdateUser";
 import Layout from "../../components/layout/index";
 
 export default function AllUsers(props) {
@@ -17,9 +18,7 @@ export default function AllUsers(props) {
           <div className="flex flex-col gap-6">
             <CardCreateUser />
             <CardDeleteUser />
-            <Card style={{ minWidth: 300 }} className="-mb-3">
-              <CardBody>Update User</CardBody>
-            </Card>
+            <CardUpdateUser />
           </div>
           <Card className="border-0 w-full mt-3">
             <CardBody>
